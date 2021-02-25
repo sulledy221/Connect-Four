@@ -3,19 +3,37 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+h1{
+    text-align: center;
+    font: "Arial";
+}
 .game{
     position: absolute;
     top: 80px;
-    left: 50%;
     transform: translate(-50%);
     width: 650px;
-    height: 600px;
-    background: rgb(19, 19, 160);
+    left: 50%;
+    height: 560px;
+    background: rgb(22, 24, 150);
     border: 5px black;
-    box-shadow: 3px 3px slategray;
+    padding: 30px;
 }
 
 .notch{
-    
+    width: 95px;
+    height: 80px;
+    background: rgb(106, 128, 101);
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.button{
+    position: absolute;
+    bottom: 120px;
+    left: 45%;
+    border: 1px solid rgb(29, 28, 28);
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
 }
