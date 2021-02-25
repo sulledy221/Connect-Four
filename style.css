@@ -1,15 +1,21 @@
-border {
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-style {
 
+.game{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 650px;
+    height: 600px;
+    background: rgb(19, 19, 160);
+    border: 5px black;
+    box-shadow: 3px 3px slategray;
 }
-look {
 
-}
-play{
-
-}
-body{
+.notch{
     
 }
