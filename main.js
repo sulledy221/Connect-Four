@@ -8,7 +8,21 @@ const board = [
     [null, null, null, null, null, null, null],
 ]; 
 // Remember render function
+const row = document.getElementsByTagName('tr');
+const column = document.getElementsByTagName('td');
+const notch = document.querySelector('.notch');
+const playerTurn = document.querySelector('player-turn');
+const playAgain = document.querySelector('.button');
 
+console.log('column - ', column)
+for (let i = 0;  i < column.length;  i++){
+    console.log('column[i] - ', column[i])
+    column[i].addEventListener('click', (e) => {
+        console.log(`${e.target.id}`) 
+    })
+}
+
+if (player1)
 // need eventlistner to handle click
 // function that checks for winning move
 // steps
@@ -20,6 +34,6 @@ const board = [
 
 
 
-function checkForWinner(){
+// function checkForWinner(){
 
-}
+// }
