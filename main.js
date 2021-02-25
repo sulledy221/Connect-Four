@@ -38,11 +38,11 @@ function render(){
     board.forEach(function(e, i){
         e.forEach(function(f, j){
             let idx = i*7+(j+1)
-            if(board[i][j] ==1){
+            if(board[i][j] === 1){
                 console.log(idx)
-                document.getElementById(`${idx}`).style.backgroundColor='red'
-            } else if (board[i][j] == -1){
-                document.getElementById(`${idx}`).style.backgroundColor='black'
+                document.getElementById(`${idx}`).classList.add('red')
+            } else if (board[i][j] === -1){
+                document.getElementById(`${idx}`).classList.add('black')
             }
         })
     })
@@ -121,7 +121,7 @@ const winningArray = [
 ];
 
 function reset() {
-    console.log("clicked reset - ")
+    console.log("clicked reset")
     board = [
         [null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null],
@@ -130,7 +130,11 @@ function reset() {
         [null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null],
     ]; 
+    for (let i = 0;  i < column.length;  i++){
+        column[i].className = "notch"
+    }
 }
+
 
 
 
