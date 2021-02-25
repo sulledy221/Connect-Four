@@ -8,6 +8,7 @@ const board = [
     [null, null, null, null, null, null, null],
 ]; 
 let currentPlayer = 1
+
 // Remember render function
 const row = document.getElementsByTagName('tr');
 const column = document.getElementsByTagName('td');
