@@ -8,6 +8,9 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 40px;
 }
+#winner-text{
+
+}
 .game{
     position: absolute;
     top: 140px;
@@ -46,4 +49,7 @@ h1{
 }
 .black{
     background-color: black;
+}
+body{
+    background-color: rgb(252, 253, 253);
 }
