@@ -26,16 +26,17 @@ const players = {
     }
 };
 
-function notches(e){
-    if (e.target.className !== 'notch') {
+let notches = document.querySelector(".notches");
+notches.addEventListener("click", notchClicked);
+playAgain.addEventListener("click", playAgain);
+console.log("this is notches", notches)
+
+function notchClicked(e){
+    if (e.target.className !== 'notches') {
         return 
     }
 }
 
-let notches = document.querySelector(".notches");
-notches.addEventListener("click", notches);
-playAgain.addEventListener("click", playAgain);
- console.log("this is notches", notches)
 // Remember render function
 const row = document.getElementsByTagName('tr');
 const column = document.getElementsByTagName('td');
