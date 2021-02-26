@@ -7,14 +7,15 @@
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
 ]; 
-const colOne = [1, 8, 15, 22, 29, 36]
-const colTwo = [2, 9, 16, 23, 30, 37]
-const colThree = [3, 10, 17, 24, 31, 38]
-const colFour = [4, 11, 18, 25, 32, 39]
-const colFive = [5, 12, 19, 26, 33, 40]
-const colSix = [6, 13, 20, 27, 34, 41 ]
-const colSeven = [7, 14, 21, 28, 35, 42 ]
-let currentPlayer = 1
+
+const colOne = [1, 8, 15, 22, 29, 36];
+const colTwo = [2, 9, 16, 23, 30, 37];
+const colThree = [3, 10, 17, 24, 31, 38];
+const colFour = [4, 11, 18, 25, 32, 39];
+const colFive = [5, 12, 19, 26, 33, 40];
+const colSix = [6, 13, 20, 27, 34, 41 ];
+const colSeven = [7, 14, 21, 28, 35, 42 ];
+let currentPlayer = 1;
 const players = {
     '1': {
         name: 'Player 1',
@@ -26,26 +27,9 @@ const players = {
     }
 };
 
-let notches = document.querySelector(".notches");
-notches.addEventListener("click", notchClicked);
-playAgain.addEventListener("click", playAgain);
-console.log("this is notches", notches)
+
 
 function notchClicked(e){
-    if (e.target.className !== 'notches') {
-        return 
-    }
-}
-
-// Remember render function
-const row = document.getElementsByTagName('tr');
-const column = document.getElementsByTagName('td');
-const notch = document.querySelector('.notch');
-const playerTurn = document.querySelector('player-turn');
-const playAgain = document.querySelector('.button');
-const game = document.querySelector('.game');
-
-
     let click = parseInt(e.target.id);
     let first  = click % 7 + 35;
     let second  = click % 7 + 28;
@@ -69,27 +53,45 @@ const game = document.querySelector('.game');
         alert('cannot select')
     }
     console.log(board)
+}
+
+
+// Remember render function
+const row = document.getElementsByTagName('tr');
+const column = document.getElementsByTagName('td');
+const playerTurnEl = document.querySelector('player-turn');
+const playAgain = document.querySelector('.button');
+const game = document.querySelector('.game');
+
+
+    
 
 console.log('column - ', column)
 for (let i = 0;  i < column.length;  i++){
-    console.log('column[i] - ', column[i])
     column[i].addEventListener('click', (e) => {
         console.log(`${e.target.id}`) 
-        let currentRow = Math.floor((parseInt(e.target.id) -1) /7)
-        let currentColumn = (parseInt(e.target.id) -1) %7
-        if (board[currentRow][currentColumn]==null){
-            board[currentRow][currentColumn] = currentPlayer
-            currentPlayer *= -1
-            render()
+        let currentRow = Math.floor((parseInt(e.target.id)) /7)
+        let currentColumn = (parseInt(e.target.id)) %7
+        
+        for(let i = 5; i >= 0; i-- ){
+            if (board[i][currentColumn]==null){
+                board[i][currentColumn] = currentPlayer
+                currentPlayer *= -1
+                render()
+                return
+            }
         }
+
         console.log(board)
     })
 }
+
+
 function render(){
     console.log('Render is working');
     board.forEach(function(e, i){
         e.forEach(function(f, j){
-            let idx = i*7+(j+1)
+            let idx = i*7+(j)
             if(board[i][j] === 1){
                 console.log(idx)
                 document.getElementById(`${idx}`).classList.add('red')
@@ -101,7 +103,6 @@ function render(){
 }
 
 
-    
 
 function reset() {
     console.log("clicked reset")
@@ -117,3 +118,6 @@ function reset() {
         column[i].className = "notch"
     }
 }
+
+
+ 
